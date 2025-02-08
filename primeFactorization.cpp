@@ -17,11 +17,12 @@ int main(){
 
     map<int, int> prime_Map;
     map<int,int>::iterator it_check;
+    int user_Input, orig_Number;
 
     //Take user requested number to prime factorize.
     cout << "Please enter the number you would like to check is a prime..." << endl;
-    int user_Input;
     cin >> user_Input;
+    orig_Number = user_Input;
     cout << "The number you entered is: " << user_Input << endl;
 
     //Create a map of primes up to the sqrt of the number.
@@ -45,8 +46,9 @@ int main(){
     }
 
     //Print out the map of prime factorizations.
+    cout << "The Prime factors of " << orig_Number << " are (prime^power): ";
     for (auto prime_Num : prime_Map){
-        cout << "The Prime factors of the number you entered are(prime/power): " << prime_Num.first << "^" << prime_Num.second << endl;
+        cout << prime_Num.first << "^" << prime_Num.second << " ";
     }
 
     return 0;
