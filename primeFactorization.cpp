@@ -18,9 +18,8 @@ int main(){
     //Handle the prime of 2 case.
     if (prime_Map.empty()){
         prime_Map.insert(make_pair(2,1));
-
-    //Handle primes greater than 2 case. Only odd numbers need be considered this point forward.
     } else {
+        //Handle primes greater than 2 case. Only odd numbers need be considered this point forward. Only up to the sqrt of the number.
         for (int i = 3; i*i <= user_Input; i = i + 2){
             //So long a i divides user_Input, add the prime to the prime factors map, continue to add 1 for each successful prime factorization.
             cout << "Trying out factors of " << i << endl;
@@ -32,7 +31,6 @@ int main(){
                     prime_Map.insert(make_pair(i,1));
                 } else {
                     it_check->second = (it_check->second)+1;
-                    cout << (it_check->second) << endl;
                 }
 
                 user_Input = user_Input/i;
