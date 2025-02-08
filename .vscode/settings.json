@@ -5,6 +5,7 @@
         "xutility": "cpp",
         "utility": "cpp",
         "iostream": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "chrono": "cpp"
     }
 }
