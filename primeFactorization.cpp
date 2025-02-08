@@ -18,12 +18,11 @@ int updateElement( map <int, int>& givenMap, int prime_Key, int given_Number ){
 int main(){
 
     map<int, int> prime_Map;
-    int user_Input, orig_Number;
+    int user_Input;
 
     //Take user requested number to prime factorize.
     cout << "Please enter the number you would like to check is a prime..." << endl;
     cin >> user_Input;
-    orig_Number = user_Input;
     cout << "The number you entered is: " << user_Input << endl;
 
     //Start timer. 
@@ -52,7 +51,7 @@ int main(){
     auto end = high_resolution_clock::now();
 
     //Print out the map of prime factorizations.
-    cout << "The Prime factors of " << orig_Number << " are (prime^power): ";
+    cout << "The Prime factors are (prime^power): ";
     for (auto prime_Num : prime_Map){
         cout << prime_Num.first << "^" << prime_Num.second << " ";
     }
