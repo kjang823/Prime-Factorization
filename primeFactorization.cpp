@@ -4,8 +4,8 @@
 using namespace std;
 using namespace chrono;
 
-int updateElement( map <int, int>& givenMap, int prime_Key, int given_Number ){
-    map <int, int>::iterator target_Prime;
+int updateElement( map <long long, int>& givenMap, long long prime_Key, long long given_Number ){
+    map <long long, int>::iterator target_Prime;
     target_Prime = givenMap.find(prime_Key);
     if(target_Prime == givenMap.end()){
         givenMap.insert(make_pair(prime_Key,1));
@@ -17,8 +17,8 @@ int updateElement( map <int, int>& givenMap, int prime_Key, int given_Number ){
 
 int main(){
 
-    map<int, int> prime_Map;
-    int user_Input;
+    map<long long, int> prime_Map;
+    long long user_Input;
 
     //Take user requested number to prime factorize.
     cout << "Please enter the number you would like to check is a prime..." << endl;
@@ -34,7 +34,7 @@ int main(){
     }
 
     //Handle primes greater than 2 case. Only odd numbers need be considered this point forward. Only up to the sqrt of the number.
-    for (int i = 3; i*i <= user_Input; i = i + 2){
+    for (long long i = 3; i*i <= user_Input; i = i + 2){
         //So long a i divides user_Input, add the prime to the prime factors map, continue to add 1 for each successful prime factorization.
         while (user_Input % i == 0){
             //Check if the number has been added to the map. If not add, else incrase power count by 1.
