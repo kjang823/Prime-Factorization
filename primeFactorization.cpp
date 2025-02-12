@@ -5,6 +5,7 @@ using namespace std;
 using namespace chrono;
 
 int updateElement( map <long long, int>& givenMap, long long prime_Key, long long given_Number ){
+    //TODO: A large enough number will result in a negative prime number. This needs to be investigated and dealth with.
     map <long long, int>::iterator target_Prime;
     target_Prime = givenMap.find(prime_Key);
     if(target_Prime == givenMap.end()){
@@ -21,12 +22,14 @@ int main(){
     long long user_Input;
 
     //Take user requested number to prime factorize.
+    //TODO: Check to make sure user input is of correct type. 
     cout << "Please enter the number you would like to check is a prime..." << endl;
     cin >> user_Input;
     cout << "The number you entered is: " << user_Input << endl;
 
     //Start timer. 
     auto start = high_resolution_clock::now();
+
     //Create a map of primes up to the sqrt of the number.
     //Handle the prime of 2 case.
     while (user_Input % 2 == 0){
@@ -34,10 +37,10 @@ int main(){
     }
 
     //Handle primes greater than 2 case. Only odd numbers need be considered this point forward. Only up to the sqrt of the number.
+    //TODO: Going through every odd number is too resource intensive. Lots of wasted cycles. Should check if the number is a prime number first. 
     for (long long i = 3; i*i <= user_Input; i = i + 2){
         //So long a i divides user_Input, add the prime to the prime factors map, continue to add 1 for each successful prime factorization.
         while (user_Input % i == 0){
-            //Check if the number has been added to the map. If not add, else incrase power count by 1.
             user_Input = updateElement(prime_Map,i,user_Input);
         }
     }
