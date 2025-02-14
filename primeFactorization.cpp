@@ -13,11 +13,19 @@ int updateElement( map <long long, int>& givenMap, long long prime_Key, long lon
     } else {
         target_Prime->second = (target_Prime->second)+1;   
     }
+
+    //Debugging lines
+    cout << "The original number is: " << given_Number << endl;
+    cout << "The prime number is: " << prime_Key << endl;
+    cout << "The division result is: " << given_Number/prime_Key << endl;
+    // cout << given_Number/prime_Key << endl;
     return given_Number/prime_Key;
  }
 
 int main(){
 
+    //Use LONG LONG MAX for testing. 
+    
     map<long long, int> prime_Map;
     long long user_Input;
 
