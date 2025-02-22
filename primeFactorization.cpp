@@ -43,7 +43,6 @@ int main(){
     for (long long i = 3; i*i <= user_Input; i = i + 2){
         while (user_Input % i == 0){
             user_Input = updateElement(prime_Map,i,user_Input);
-            cout << user_Input << endl;
         }
     }
 
