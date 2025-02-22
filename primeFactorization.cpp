@@ -4,7 +4,7 @@
 using namespace std;
 using namespace chrono;
 
-int updateElement( map <long long, int>& givenMap, long long prime_Key, long long given_Number ){
+long long updateElement( map <long long, int>& givenMap, long long prime_Key, long long given_Number ){
     //TODO: A large enough number will result in a negative prime number. This needs to be investigated and dealth with.
     map <long long, int>::iterator target_Prime;
     target_Prime = givenMap.find(prime_Key);
@@ -14,11 +14,6 @@ int updateElement( map <long long, int>& givenMap, long long prime_Key, long lon
         target_Prime->second = (target_Prime->second)+1;   
     }
 
-    //Debugging lines
-    cout << "The original number is: " << given_Number << endl;
-    cout << "The prime number is: " << prime_Key << endl;
-    cout << "The division result is: " << given_Number/prime_Key << endl;
-    // cout << given_Number/prime_Key << endl;
     return given_Number/prime_Key;
  }
 
@@ -50,6 +45,7 @@ int main(){
         //So long a i divides user_Input, add the prime to the prime factors map, continue to add 1 for each successful prime factorization.
         while (user_Input % i == 0){
             user_Input = updateElement(prime_Map,i,user_Input);
+            cout << user_Input << endl;
         }
     }
 
