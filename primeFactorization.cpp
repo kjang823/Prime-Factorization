@@ -33,8 +33,7 @@ int main(){
     //Start timer. 
     auto start = high_resolution_clock::now();
 
-    //Create a map of primes up to the sqrt of the number.
-    //Handle the prime of 2 case.
+    //Start work.
     while (user_Input % 2 == 0){
         user_Input = updateElement(prime_Map,2,user_Input);
     }
@@ -42,7 +41,6 @@ int main(){
     //Handle primes greater than 2 case. Only odd numbers need be considered this point forward. Only up to the sqrt of the number.
     //TODO: Going through every odd number is too resource intensive. Lots of wasted cycles. Should check if the number is a prime number first. 
     for (long long i = 3; i*i <= user_Input; i = i + 2){
-        //So long a i divides user_Input, add the prime to the prime factors map, continue to add 1 for each successful prime factorization.
         while (user_Input % i == 0){
             user_Input = updateElement(prime_Map,i,user_Input);
             cout << user_Input << endl;
