@@ -9,7 +9,7 @@ This is a project to create a program to generate the prime factorizations of an
 * Measures computation time to calculate prime factorizations.
 
 ## Current Issues
-* A large enough number to conduct prime factorizations will result in a negative number. `long long` has a limit at quintillion. Division of the `LONG LONG MAX` by a prime number will result in overflow resulting in a negative number.
+* `long long` has a limit at quintillion.
 * No input sanitization (take `long long` input but no catches for strings).
 * Brute force check for prime numbers.
 * `while` loops can result in long calculation times.
