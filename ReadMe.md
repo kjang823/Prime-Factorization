@@ -19,5 +19,13 @@ This is a project to create a program to generate the prime factorizations of an
 ## How to Use
 Simply compile the code and create an executable object. Then run the executable object in your terminal. 
 
+## Test Results
+- Note all tests are done with `LLONG MAX'[^2]
+- Test result of initial working version(0.01)
+
+![alt text](images/Test01Result.jpg)
+
 ## Foot Notes
 [^1]: The goal of usability to is make this program as easily used by anyone. Thus the use of a terminal is not optimal. As a result, creating an executable that is downloable is prefereable.
+
+[^2]: `LLONG MAX' is 9223372036854775807

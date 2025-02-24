@@ -4,18 +4,22 @@
 using namespace std;
 using namespace chrono;
 
-long long updateElement( map <long long, int>& givenMap, long long prime_Key, long long given_Number ){
-    //TODO: A large enough number will result in a negative prime number. This needs to be investigated and dealth with.
+long long updateElement( map <long long, int>& given_Map, long long prime_Key, long long given_Number ){
     map <long long, int>::iterator target_Prime;
-    target_Prime = givenMap.find(prime_Key);
-    if(target_Prime == givenMap.end()){
-        givenMap.insert(make_pair(prime_Key,1));
+    target_Prime = given_Map.find(prime_Key);
+    if(target_Prime == given_Map.end()){
+        given_Map.insert(make_pair(prime_Key,1));
     } else {
         target_Prime->second = (target_Prime->second)+1;   
     }
 
     return given_Number/prime_Key;
- }
+}
+
+bool primeCheck(map <long long, int>& prime_Map, long long num2Check, long long given_Number){
+    map <long long, int>::iterator map_Check = prime_Map.find(num2Check);
+    return false;
+}
 
 int main(){
 
@@ -28,6 +32,9 @@ int main(){
     //TODO: Check to make sure user input is of correct type. 
     cout << "Please enter the number you would like to check is a prime..." << endl;
     cin >> user_Input;
+    // if (cin >> ){
+
+    // }
     cout << "The number you entered is: " << user_Input << endl;
 
     //Start timer. 
@@ -41,6 +48,7 @@ int main(){
     //Handle primes greater than 2 case. Only odd numbers need be considered this point forward. Only up to the sqrt of the number.
     //TODO: Going through every odd number is too resource intensive. Lots of wasted cycles. Should check if the number is a prime number first. 
     for (long long i = 3; i*i <= user_Input; i = i + 2){
+
         while (user_Input % i == 0){
             user_Input = updateElement(prime_Map,i,user_Input);
         }
@@ -50,6 +58,8 @@ int main(){
     while (user_Input != 1){
         user_Input = updateElement(prime_Map,user_Input,user_Input);
     }
+
+    //End work. 
 
     //End timer.
     auto end = high_resolution_clock::now();
