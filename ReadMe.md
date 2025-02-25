@@ -20,7 +20,7 @@ This is a project to create a program to generate the prime factorizations of an
 Simply compile the code and create an executable object. Then run the executable object in your terminal. 
 
 ## Test Results
-- Note all tests are done with `LLONG MAX'[^2]
+- Note: all tests are done with `LLONG MAX'[^2]
 - Test result of initial working version(0.01)
 
 ![alt text](Images/Test01Result.jpg)
