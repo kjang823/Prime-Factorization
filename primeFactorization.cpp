@@ -16,9 +16,13 @@ long long updateElement( map <long long, int>& given_Map, long long prime_Key, l
     return given_Number/prime_Key;
 }
 
-bool primeCheck(map <long long, int>& prime_Map, long long num2Check, long long given_Number){
-    map <long long, int>::iterator map_Check = prime_Map.find(num2Check);
-    return false;
+bool primeCheck(map <long long, int>& prime_Map, long long num2Check){
+    for (auto prime_Num : prime_Map){
+        if (num2Check % (prime_Num.first) == 0){
+            return false;
+        }
+    }
+    return true;
 }
 
 int main(){
@@ -41,7 +45,7 @@ int main(){
     auto start = high_resolution_clock::now();
 
     //Start work.
-    while (user_Input % 2 == 0){
+    while (primeCheck(prime_Map,2) && user_Input % 2 == 0){
         user_Input = updateElement(prime_Map,2,user_Input);
     }
 

@@ -11,7 +11,7 @@ This is a project to create a program to generate the prime factorizations of an
 ## Current Issues
 * `long long` has a limit at quintillion.
 * No input sanitization (take `long long` input but no catches for strings).
-* Brute force check for prime numbers.
+* Brute force check for prime numbers.(Work in Progress)
 * `while` loops can result in long calculation times.
 * No GUI capabilities.
 * Issues with usability[^1]
