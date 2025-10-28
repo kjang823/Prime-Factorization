@@ -14,6 +14,7 @@ This is a project to create a program to generate the prime factorizations of an
 * Brute force check for prime numbers.(Work in Progress)
 * `while` loops can result in long calculation times.
 * No GUI capabilities.
+* Code is O(N) efficient.
 * Issues with usability[^1]
 
 ## How to Use
