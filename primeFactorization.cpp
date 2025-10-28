@@ -2,23 +2,32 @@
 #include <iostream>
 #include <chrono>
 #include <climits>
-using namespace std;
-using namespace chrono;
+#include <vector>
+// using namespace chrono;
 
 #include <bitset>
 #include <iostream>
 #include <climits>
 
-struct bitFields {
-    std::bitset<128> bits;
-};
-
 int main() {
-    bitFields test;
-    std::bitset<128> b(ULLONG_MAX); // lower 64 bits set
-    b <<= 1;                        // multiply by 2
-    test.bits = b;
-    std::cout << "Bitset: " << test.bits << std::endl;
+    struct beyond_Long_Long {
+        std::vector<uint64_t> bits; // Each element holds 64 bits
+    };
+    const size_t BITS_IN_UINT64 = 64;
+    size_t num_Bits = 130; // Example: 130 bits
+    size_t num_Elements = (num_Bits + BITS_IN_UINT64 - 1) / BITS_IN_UINT64; // Calculate number of uint64_t needed  
+    beyond_Long_Long bigNum;
+    bigNum.bits.resize(num_Elements, 0); // Initialize all bits to 0
+    // Set some bits for demonstration
+    bigNum.bits[0] = 0xFFFFFFFFFFFFFFFF; // First 64 bits set to 1
+    bigNum.bits[1] = 0x0000000000000003; // Next bits set to 11 (for 130 bits total)
+    // Print the bits
+    for (size_t i = 0; i < bigNum.bits.size(); ++i) {
+        std::bitset<BITS_IN_UINT64> bs(bigNum.bits[i]);
+        std::cout << "Element " << i << ": " << bs << std::endl;
+    }
+    printf("The number is: %llu%llu\n", bigNum.bits[1], bigNum.bits[0]);
+    return 0;
 }
 
 // unsigned long long updateElement( map <unsigned long long, int>& given_Map, unsigned long long prime_Key, unsigned long long given_Number ){
