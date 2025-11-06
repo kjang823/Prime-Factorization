@@ -1,34 +1,13 @@
 #include <map>
 #include <iostream>
 #include <chrono>
-#include <climits>
 #include <vector>
+#include <cstdint>
+
+
 using namespace std::chrono;
 using namespace std;
 #include <bitset>
-#include <iostream>
-#include <climits>
-
-// int main() {
-//     struct beyond_Long_Long {
-//         std::vector<uint64_t> bits; // Each element holds 64 bits
-//     };
-//     const size_t BITS_IN_UINT64 = 64;
-//     size_t num_Bits = 130; // Example: 130 bits
-//     size_t num_Elements = (num_Bits + BITS_IN_UINT64 - 1) / BITS_IN_UINT64; // Calculate number of uint64_t needed  
-//     beyond_Long_Long bigNum;
-//     bigNum.bits.resize(num_Elements, 0); // Initialize all bits to 0
-//     // Set some bits for demonstration
-//     bigNum.bits[0] = 0xFFFFFFFFFFFFFFFF; // First 64 bits set to 1
-//     bigNum.bits[1] = 0x0000000000000003; // Next bits set to 11 (for 130 bits total)
-//     // Print the bits
-//     for (size_t i = 0; i < bigNum.bits.size(); ++i) {
-//         std::bitset<BITS_IN_UINT64> bs(bigNum.bits[i]);
-//         std::cout << "Element " << i << ": " << bs << std::endl;
-//     }
-//     printf("The number is: %llu\n",  bigNum.bits[0]);
-//     return 0;
-// }
 
 int updateElement( map <int, int>& given_Map, int prime_Key, int given_Number ){
     map <int, int>::iterator target_Prime;
@@ -58,14 +37,9 @@ int main(){
     //TODO: Set bits for any int, then implement prime factorization on that.
     cout << "THIS PROGRAM IS UNDER CONSTRUCTION." << endl;
 
-    string user_Input;
-
-    cout << "Please enter the number you would like to check is a prime..." << endl;
-    cin >> user_Input;  
-
-    int user_Number = stoi(user_Input);
-
-    printf("The number is: %d\n", user_Number);
+    unsigned long long user_Number;
+    cout << "Enter a positive integer to prime factorize: ";
+    cin >> user_Number;
     
     map<int, int> prime_Map;
 
@@ -73,7 +47,7 @@ int main(){
     //Take user requested number to prime factorize.
     //TODO: Check to make sure user input is of correct type. 
 
-    if (user_Number > INT_MAX){
+    if (user_Number > ULLONG_MAX){
         cout << "The number is too large." << endl;
         exit(EXIT_FAILURE);
     }
