@@ -5,7 +5,7 @@
 This is a project to create a program to generate the prime factorizations of any given number. I intended this as a project to understand C++. As of now(2/10/2025) I do not know specifically what applications this may have but I just thought it'd be cool to work through as a hobby.
 
 ## Current Capabilities
-* Handles numbers up to `long long` max which is 9,223,372,036,854,775,807 
+* Handles numbers up to `unsigned long long` max which is 18,446,744,073,709,551,615.
 * Measures computation time to calculate prime factorizations.
 
 ## Current Issues
@@ -29,4 +29,4 @@ Simply compile the code and create an executable object. Then run the executable
 ## Foot Notes
 [^1]: The goal of usability to is make this program as easily used by anyone. Thus the use of a terminal is not optimal. As a result, creating an executable that is downloable is prefereable.
 
-[^2]: `LLONG MAX' is 9223372036854775807
+[^2]: `ULLONG MAX' is 18446744073709551615
