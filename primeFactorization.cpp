@@ -9,8 +9,8 @@ using namespace std::chrono;
 using namespace std;
 #include <bitset>
 
-int updateElement( map <int, int>& given_Map, int prime_Key, int given_Number ){
-    map <int, int>::iterator target_Prime;
+unsigned long long updateElement( map <unsigned long long, unsigned long long>& given_Map, unsigned long long prime_Key, unsigned long long given_Number ){
+    map <unsigned long long, unsigned long long>::iterator target_Prime;
     target_Prime = given_Map.find(prime_Key);
     if(target_Prime == given_Map.end()){
         given_Map.insert(make_pair(prime_Key,1));
@@ -21,7 +21,7 @@ int updateElement( map <int, int>& given_Map, int prime_Key, int given_Number ){
     return given_Number/prime_Key;
 }
 
-bool primeCheck(map <int, int>& prime_Map, int num2Check){
+bool primeCheck(map <unsigned long long, unsigned long long>& prime_Map, unsigned long long num2Check){
     for (auto prime_Num : prime_Map){
         if (num2Check % (prime_Num.first) == 0){
             return false;
@@ -41,7 +41,7 @@ int main(){
     cout << "Enter a positive integer to prime factorize: ";
     cin >> user_Input;
     
-    map<int, int> prime_Map;
+    map<unsigned long long, unsigned long long> prime_Map;
     unsigned long long user_Number = strtoull(user_Input.c_str(), nullptr, 10);;
     if (errno == ERANGE){
         cout << "The number you have entered is out of range. Please enter a smaller positive integer." << endl;
