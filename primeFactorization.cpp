@@ -88,7 +88,7 @@ int main(){
     }
     cout << endl;
 
-    cout << "Calculating prime factorization took " << (duration_cast<milliseconds>(end-start)).count() << " milliseconds." << endl;
+    cout << "Calculating prime factorization took " << (duration_cast<nanoseconds>(end-start)).count() << " nanoseconds." << endl;
 
     return 0;
 }
