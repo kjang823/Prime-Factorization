@@ -37,20 +37,20 @@ int main(){
     //TODO: Set bits for any int, then implement prime factorization on that.
     cout << "THIS PROGRAM IS UNDER CONSTRUCTION." << endl;
 
-    unsigned long long user_Number;
+    string user_Input;
     cout << "Enter a positive integer to prime factorize: ";
-    cin >> user_Number;
+    cin >> user_Input;
     
     map<int, int> prime_Map;
+    unsigned long long user_Number = strtoull(user_Input.c_str(), nullptr, 10);;
+    if (errno == ERANGE){
+        cout << "The number you have entered is out of range. Please enter a smaller positive integer." << endl;
+        return 1;
+    }
 
 
     //Take user requested number to prime factorize.
     //TODO: Check to make sure user input is of correct type. 
-
-    if (user_Number > ULLONG_MAX){
-        cout << "The number is too large." << endl;
-        exit(EXIT_FAILURE);
-    }
 
     cout << "The number you entered is: " << user_Number << endl;
 
